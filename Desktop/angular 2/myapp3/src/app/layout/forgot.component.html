@@ -1,0 +1,28 @@
+<div fxLayout="row" class="login-wrap login-form" *ngIf="!authenticated" fxLayoutAlign="center center">
+	<md-card class="form-wrapper" >
+		<form [formGroup]="forgotForm" (ngSubmit)="submitForm(forgotForm.value)" focus-form novalidate>
+		 <h3>Forgot Password</h3>
+		 <md-input-container class="form-group md-block" [ngClass]="{'has-error':!forgotForm.controls['email'].valid && forgotForm.controls['email'].touched}">
+		    <input mdInput class="form-control" type="text" [formControl]="forgotForm.controls['email']">
+		    <md-placeholder>
+		       <md-icon class="material-icons">email</md-icon> Email
+		    </md-placeholder>
+		</md-input-container>
+		<div class="error-msg">
+		    <div *ngIf="forgotForm.controls['email'].hasError('required') && forgotForm.controls['email'].touched" class="alert alert-danger">You must add an email.</div>
+		    <div *ngIf="forgotForm.controls['email'].hasError('minlength') && forgotForm.controls['email'].touched" class="alert alert-danger">Your email must be at least 10 characters long.</div>
+		    <div *ngIf="forgotForm.controls['email'].hasError('maxlength') && forgotForm.controls['email'].touched" class="alert alert-danger">Your email cannot exceed 50 characters.</div>
+		    <div *ngIf="forgotForm.controls['email'].hasError('pattern') && forgotForm.controls['email'].touched" class="alert alert-danger">Your email must look like an email address.</div>
+		</div>
+
+		  <div class="form-group">
+		    <button md-button type="submit" md-raised-button md-cornered-button [disabled]="!forgotForm.valid">Send Email</button>
+		  </div>
+		</form>
+	</md-card>
+</div>
+<div class="register-msg">
+    <P>
+        Don't have an account? <a routerLink="/signup" routerLinkActive="active">Register</a>
+    </P>
+</div>

@@ -1,0 +1,46 @@
+<div fxLayout="row" class="login-wrap login-form" *ngIf="!authenticated" fxLayoutAlign="center center">
+ <md-card class="form-wrapper" >
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm(loginForm.value)" focus-form novalidate>
+     <h3>Sign In</h3>
+     <md-input-container class="form-group md-block" [ngClass]="{'has-error':!loginForm.controls['email'].valid && loginForm.controls['email'].touched}">
+        <input mdInput class="form-control" type="text" [formControl]="loginForm.controls['email']">
+        <md-placeholder>
+           <md-icon class="material-icons">email</md-icon> Email
+        </md-placeholder>
+    </md-input-container>
+    <div class="error-msg">
+        <div *ngIf="loginForm.controls['email'].hasError('required') && loginForm.controls['email'].touched" class="alert alert-danger">You must add an email.</div>
+        <div *ngIf="loginForm.controls['email'].hasError('minlength') && loginForm.controls['email'].touched" class="alert alert-danger">Your email must be at least 10 characters long.</div>
+        <div *ngIf="loginForm.controls['email'].hasError('maxlength') && loginForm.controls['email'].touched" class="alert alert-danger">Your email cannot exceed 50 characters.</div>
+        <div *ngIf="loginForm.controls['email'].hasError('pattern') && loginForm.controls['email'].touched" class="alert alert-danger">Your email must look like an email address.</div>
+    </div>
+
+
+      <md-input-container class="form-group md-block input-container" [ngClass]="{'has-error':!loginForm.controls['password'].valid && loginForm.controls['password'].touched}">
+        <input mdInput class="form-control" type="password" [formControl]="loginForm.controls['password']">
+        <md-placeholder>
+           <md-icon class="material-icons app-input-icon">vpn_key</md-icon> Password
+        </md-placeholder>
+      </md-input-container>
+     <div class="error-msg"> 
+        <div *ngIf="loginForm.controls['password'].hasError('required') && loginForm.controls['password'].touched" class="alert alert-danger">Required.</div>
+        <div *ngIf="loginForm.controls['password'].hasError('minlength') && loginForm.controls['password'].touched" class="alert alert-danger">Your email must be at least 10 characters long.</div>
+        <div *ngIf="loginForm.controls['password'].hasError('maxlength') && loginForm.controls['password'].touched" class="alert alert-danger">Your email cannot exceed 50 characters.</div>
+     </div>
+
+        <div class="forgot-link">
+            <div layout="row">
+                    <a routerLink="/forgot" routerLinkActive="active">Forgot Password?</a>
+                    <a routerLink="/signup" routerLinkActive="active" style="float:right;">Sign Up</a>
+            </div>
+        </div>
+
+      <div class="form-group">
+        <button md-button type="submit" md-raised-button md-cornered-button [disabled]="!loginForm.valid">Submit</button>
+      </div>
+    </form>
+  </md-card>
+</div>
+ 
+
+ 

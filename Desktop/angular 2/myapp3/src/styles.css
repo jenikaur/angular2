@@ -1,0 +1,80 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+
+a { text-decoration: none; color:#039be5;}
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0px 1000px #eee inset; }
+button:focus { background: transparent; }
+
+
+
+.mat-card h3{ padding:0 0 15px; color:#2196F3; border-bottom: 1px solid #eee; text-align:center; text-transform: uppercase; font-size: 30px; margin-top:-15px;}
+.login-wrap{width: 85%; float: left; padding: 130px 0 10px; height: 100%;} 
+.login-form{margin: 0 auto; max-width: 400px; float: none}
+.login-wrap md-card md-content{ background: #fff}
+.login-wrap md-card{ padding:40px 0 40px;  }
+.login-wrap md-input-container {margin:0px 15px;float: left;width: 93%}
+.login-wrap md-input-container md-icon {color: #757575; font-size: 20px}
+.login-wrap button, .dialogdemoBasicUsage button { margin:0px 15px;float: left;width: 93%; background: #2196F3; display: block; width: 250px; margin: 0 auto; float: none; min-height:55px; color: #fff!important; font-size: 20px; text-transform: uppercase; font-weight: bold;}
+.login-wrap button:hover{ background: #0A69B2; }
+.form-wrapper { float: left; width: 100%; padding: 30px 0 }
+.forgot-link{float: left; width: 90%; margin: 12px 0 30px; padding: 0 25px;}
+.forgot-link a:hover {color: #0A69B2;}
+.error-msg{ color:red ; font-size: 12px; padding: 0 20px 10px; }
+
+
+
+footer, .inner-footer{box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3); left: 0; min-height: 70px; padding: 0 20px; position: absolute; bottom: 0; width: 100%; z-index: 11; background: #121212; color: #fff}
+footer p{margin-bottom: 10px}
+.inner-footer { float: left; width: 100% }
+.inner-footer footer{ max-height: 70px; padding: 25px 0 ; background: transparent;text-align: center; color: #fff}
+
+
+.header { left:0; width:96.9%; float:left; background-color: #2196F3; height: 64px; color: #fff; padding: 0 20px; position: absolute; top:0; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
+.nav-menu ul{ float:right; text-align: right; margin-top: 0px; padding: 0; }
+.nav-menu ul li { display: inline-block; margin: 0 0 0 12px; padding: 0; }
+.nav-menu ul li a { font-size: 1rem; color: #fff; display: block; line-height: 64px; padding: 0 15px; transition: all ease 0.3s 0s; -webkit-transition: all ease 0.3s 0s; -o-transition: all ease 0.3s 0s; }
+.nav-menu ul li a:hover { background-color: rgba(0, 0, 0, 0.1); }
+.nav-menu ul li a.active {background-color: #eee}
+.nav-menu md-icon { color:white; position: relative; top: 5px; margin: 0 6px 0 0; }
+.brand-logo { color: #fff; display: inline-block; font-size: 32px; padding: 10px 0 0; }
+
+
+.container { margin: 0; padding: 30px 30px 30px 57px; background: #EBEFF2; float: left; width: 100%; height: 100%}
+.table-header { float: left; width: 100%; margin-bottom: 30px; }
+.table-header h3 { color: #666; font-size: 26px; font-weight: 700; margin-bottom: 5px; text-transform: capitalize;}
+.table-header p { color: #999; font-size: 16px; }
+
+
+.register-msg p { font-weight: 300; font-size: 14px; font-style: bold; text-align: center; }
+.register-msg {margin: 25px 0;}
+.register-msg p a:hover{ color: #0A69B2 }
+
+
+.container { margin: 0; padding: 30px 30px 30px 57px; background: #EBEFF2; float: left; width: 100%; height: 100%}
+.top-continer {float: left;width: 100%; margin-bottom: 15px;}
+.top-continer .top-heading h5 { color: #687989; font-weight: 400 ; text-align: left;}
+.top-continer h5, .graph-wrap h5 { color: #8AA2B2; font-size: 20px; text-align: center; margin-bottom: 15px} 
+.top-continer h2{ color: #696969; font-size: 24px; font-weight: 700; text-align: center;}  
+.top-continer h5 sup { color: #62C418; font-size: 22px  }
+.top-continer.layout-row, .top-continer .layout-row, .bottom-container .layout-row{ height: auto }
+.summary { margin-right: 30px; }
+.summary-detail { float: left; width: 100%; margin-top: 30px }
+.growth-wrap h5 { color: #687989; margin-top: 15px; font-weight: 500 }
+.growth-graph { float: left; width: 100%;height: 106px; margin-top: 30px }
+.growth-graph { width: 100% }
+.growth-wrap.box-wrap {max-width: 33%;}
+.growth-graph { text-align: center; }
+.growth-graph img { height: 100% }
+.box-wrap {-webkit-box-shadow: 3px 3px 12px -2px rgba(130, 125, 125, 0.4);-moz-box-shadow:    3px 3px 12px -2px rgba(130, 125, 125, 0.4);box-shadow:         3px 3px 12px -2px rgba(130, 125, 125, 0.4); background: #fff; float: left; width: 100%; padding: 30px 15px}
+.map-wrappper { margin-right: 30px; width: 50%;}
+.graph { float: none; width: 350px; height: 350px; border: 5px solid #498EE3;margin: 0 auto; } 
+.graph img { width: 100%; height: 100% }
+.graph-wrap h5 { text-align: left; margin-bottom: 30px }
+.bar-wrap {float: left; width: 100%}
+.bar-wrap li {margin: 25px 0;}
+.bar-wrap li p{ color: #696969 }
+.bar-wrap h3 { font-size: 28px; color: #696969; font-weight: 700 } 
+.bar-wrap h3 span {color: #F8A61F;  font-weight: 400}
+.bar-wrap .outline-btn { padding: 0 30px }

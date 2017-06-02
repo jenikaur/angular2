@@ -1,0 +1,54 @@
+<div fxLayout="row" class="login-wrap login-form" *ngIf="!authenticated" fxLayoutAlign="center center">
+ <md-card class="form-wrapper" >
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm(registerForm.value)" focus-form novalidate>
+       <h3>Sign Up</h3>
+       
+      <md-input-container class="form-group md-block" [ngClass]="{'has-error':!registerForm.controls['firstname'].valid && registerForm.controls['firstname'].touched}">
+          <input mdInput class="form-control" type="text" [formControl]="registerForm.controls['firstname']">
+          <md-placeholder>
+             <md-icon class="material-icons">person</md-icon> First Name
+          </md-placeholder>
+      </md-input-container>
+      <div class="error-msg">
+          <div *ngIf="registerForm.controls['firstname'].hasError('required') && registerForm.controls['firstname'].touched" class="alert alert-danger">Required.</div>
+          <div *ngIf="registerForm.controls['firstname'].hasError('minlength') && registerForm.controls['firstname'].touched" class="alert alert-danger">Your firstname must be at least 3 characters long.</div>
+          <div *ngIf="registerForm.controls['firstname'].hasError('maxlength') && registerForm.controls['firstname'].touched" class="alert alert-danger">Your firstname cannot exceed 20 characters.</div>
+          <div *ngIf="registerForm.controls['firstname'].hasError('pattern') && registerForm.controls['firstname'].touched" class="alert alert-danger">Only alphabets are allowed.</div>
+      </div>
+
+      <md-input-container class="form-group md-block" [ngClass]="{'has-error':!registerForm.controls['lastname'].valid && registerForm.controls['lastname'].touched}">
+          <input mdInput class="form-control" type="text" [formControl]="registerForm.controls['lastname']">
+          <md-placeholder>
+             <md-icon class="material-icons">person</md-icon> Last Name
+          </md-placeholder>
+      </md-input-container>
+      <div class="error-msg">
+          <div *ngIf="registerForm.controls['lastname'].hasError('required') && registerForm.controls['lastname'].touched" class="alert alert-danger">Required.</div>
+          <div *ngIf="registerForm.controls['lastname'].hasError('minlength') && registerForm.controls['lastname'].touched" class="alert alert-danger">Your lastname must be at least 3 characters long.</div>
+          <div *ngIf="registerForm.controls['lastname'].hasError('maxlength') && registerForm.controls['lastname'].touched" class="alert alert-danger">Your lastname cannot exceed 20 characters.</div>
+          <div *ngIf="registerForm.controls['lastname'].hasError('pattern') && registerForm.controls['lastname'].touched" class="alert alert-danger">Only alphabets are allowed.</div>
+      </div>
+
+      <md-input-container class="form-group md-block" [ngClass]="{'has-error':!registerForm.controls['email'].valid && registerForm.controls['email'].touched}">
+          <input mdInput class="form-control" type="text" [formControl]="registerForm.controls['email']">
+          <md-placeholder>
+             <md-icon class="material-icons">email</md-icon> Email
+          </md-placeholder>
+      </md-input-container>
+      <div class="error-msg">
+          <div *ngIf="registerForm.controls['email'].hasError('required') && registerForm.controls['email'].touched" class="alert alert-danger">You must add an email.</div>
+          <div *ngIf="registerForm.controls['email'].hasError('minlength') && registerForm.controls['email'].touched" class="alert alert-danger">Your email must be at least 10 characters long.</div>
+          <div *ngIf="registerForm.controls['email'].hasError('maxlength') && registerForm.controls['email'].touched" class="alert alert-danger">Your email cannot exceed 50 characters.</div>
+          <div *ngIf="registerForm.controls['email'].hasError('pattern') && registerForm.controls['email'].touched" class="alert alert-danger">Your email must look like an email address.</div>
+      </div>
+      <div class="form-group">
+        <button md-button type="submit" md-raised-button md-cornered-button [disabled]="!registerForm.valid">Sign Up</button>
+      </div>
+    </form>
+  </md-card>
+</div>
+<div class="register-msg">
+  <P>If you already have an account 
+    <a href="/home">Sign in</a>
+  </P>
+</div>
